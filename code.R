@@ -5,8 +5,8 @@ library(papeR)
 temp = read.csv("FF_12Ind.csv", header=TRUE)
 head(temp)
 summary(temp)
-
-
+Chems <- temp[ ,10] 
+temp <- cbind(temp[, 1:4], Chems)
 ## Step 1. Create .RData data file
 
 temp.ts = ts(temp[,-1],start=c(1926,7),freq=12)
